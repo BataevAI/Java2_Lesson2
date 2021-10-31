@@ -20,8 +20,8 @@ public class Les2 {
                 try {
                     summ += Integer.parseInt(arr[i][j]);
                 } catch (NumberFormatException e) {
-                    System.out.println("Ошибка в символе в следующей ячейке: " + "строка: " + (i + 1) + ", " + "столбец: " + (j + 1));
-                    System.out.close();
+                    throw new MyArrayDataException("Ошибка в символе в следующей ячейке: " + "строка: " + (i + 1) + ", " + "столбец: " + (j + 1));
+                   
                 }
 
 
@@ -58,13 +58,13 @@ public class Les2 {
 
             System.out.println(myArr(Arr1_corr));
             System.out.println(myArr(Arr2_uncorr));
-            //System.out.println(myArr(Arr3));   //не получается добавить сюда третий вариант с исключением не корректного формата цифры
+            
         } catch (MyArraySizeException e) {
             System.out.println("Размеры массива не корректны");
-        } catch (MyArrayDataException e) {
-            System.out.println("данные в ячейке не корректны");
-        }
-        System.out.println(myArr(Arr3_uncorr)); // получается только если вывести из данного
+        } //catch (MyArrayDataException e) {
+            //System.out.println("данные в ячейке не корректны");
+            //  }
+        System.out.println(myArr(Arr3_uncorr)); 
     }
 
 }
